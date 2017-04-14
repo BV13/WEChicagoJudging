@@ -1,0 +1,42 @@
+Code,Award,Priority,OldCode,OldAward,OldPriority
+CM,Chicago Medal,1,CM,Chicago Medal,1
+BS,Best of Show,2,BS,Best of Show,2
+AJ,Archer Jackson Award,3,AJ,Archer Jackson Award,3
+SS,Shelly Stein Award,4,SS,Shelly Stein Award,4
+HOG,Historical Open Gold,5.1,OG,Open Gold,5
+HPG,Historical Painters Gold,5.2,PG,Painters Gold,6
+VOG,Ordnance Open Gold,5.5,VG,Ordnance Gold,7
+HOS,Historical Open Silver,6.1,OS,Open Silver,8
+HPS,Historical Painters Silver,6.2,PS,Painters Silver,9
+VOS,Ordnance  Open Silver,6.5,VS,Ordnance  Silver,10
+HOB,Historical Open Bronze,7.1,OB,Open Bronze,11
+HPB,Historical Painters Bronze,7.2,PB,Painters Bronze,12
+VOB,Ordnance Open Bronze,7.5,VB,Ordnance Bronze,13
+HOC,Historical Open Certificate of Merit,8.1,OC,Open Certificate of Merit,14
+HPC,Historical Painters Certificate of Merit,8.2,PC,Painters Certificate of Merit,15
+VOC,Ordnance Open Certificate of Merit,8.5,VC,Ordnance Certificate of Merit,16
+GM,General Medal,9.1,GM,General Medal,17
+GC,General  Certificate of Merit,9.2,GC,General  Certificate of Merit,18
+BC,Basic Certificate of Merit,10.1,BC,Basic Certificate of Merit,19
+TM,Theme Award,11.1,TM,Theme Award,20
+TC,Theme Certificate of Merit,11.2,TC,Theme Certificate of Merit,21
+DM,Displayers Award,12.1,DM,Displayers Award,22
+DC,Displayers Certificate of Merit,12.2,DC,Displayers Certificate of Merit,23
+AM,Antique Figure Award,13.1,AM,Antique Figure Award,24
+AC,Antique Figure Certificate of Merit,13.2,AC,Antique Figure Certificate of Merit,25
+WM,War Game Award,14.1,WM,War Game Award,26
+WC,War Game Certificate of Merit,14.2,WC,War Game Certificate of Merit,27
+JM,Junior Award,15.1,JM,Junior Award,28
+JC,Junior Certificate of Merit,15.2,JC,Junior Certificate of Merit,29
+FOG,Fantasy Open Gold,5.3,,,
+FOS,Fantasy Open Silver,6.3,,,
+FOB,Fantasy Open Bronze,7.3,,,
+FOC,Fantasy Open Certificate,8.3,,,
+FPB,Fantasy Painters Bronze,7.4,,,
+FPC,Fantasy Painters Certificate,8.4,,,
+FPG,Fantasy Painters Gold,5.4,,,
+FPS,Fantasy Painters Silver,6.4,,,
+VPB,Ordnance  Painters Bronze,7.6,,,
+VPC,Ordnance Painters Certificate of Merit,8.6,,,
+VPG,Ordnance Painters Gold,5.6,,,
+VPS,Ordnance  Painters Silver,6.6,,,
