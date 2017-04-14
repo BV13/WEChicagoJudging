@@ -99,6 +99,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="CombineDatabases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CombineDatabases.Designer.cs">
+      <DependentUpon>CombineDatabases.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Outputter.cs" />
+    <EmbeddedResource Include="CombineDatabases.resx">
+      <DependentUpon>CombineDatabases.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditEntryForm.resx">
       <DependentUpon>EditEntryForm.cs</DependentUpon>
     </EmbeddedResource>

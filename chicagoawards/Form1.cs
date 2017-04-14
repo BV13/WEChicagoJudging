@@ -234,5 +234,11 @@ namespace WE2017Awards
         {
 
         }
+
+        private void btn_combineDBs_Click(object sender, EventArgs e)
+        {
+            CombineDatabases cdb = new CombineDatabases();
+            cdb.Show();
+        }
     }
 }

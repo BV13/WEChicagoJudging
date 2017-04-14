@@ -53,6 +53,7 @@
             this.btn_outputPriorities = new System.Windows.Forms.Button();
             this.lbl_DB = new System.Windows.Forms.Label();
             this.lbl_database = new System.Windows.Forms.Label();
+            this.btn_combineDBs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_awards)).BeginInit();
             this.group_AddAward.SuspendLayout();
             this.SuspendLayout();
@@ -206,10 +207,10 @@
             this.txt_Year.Enabled = false;
             this.txt_Year.Font = new System.Drawing.Font("Book Antiqua", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Year.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txt_Year.Location = new System.Drawing.Point(144, 38);
+            this.txt_Year.Location = new System.Drawing.Point(50, 14);
             this.txt_Year.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Year.Name = "txt_Year";
-            this.txt_Year.Size = new System.Drawing.Size(55, 35);
+            this.txt_Year.Size = new System.Drawing.Size(19, 35);
             this.txt_Year.TabIndex = 4;
             this.txt_Year.Visible = false;
             this.txt_Year.LostFocus += new System.EventHandler(this.txt_Year_LostFocus);
@@ -320,10 +321,10 @@
             // 
             // btn_outputPriorities
             // 
-            this.btn_outputPriorities.Location = new System.Drawing.Point(1113, 40);
+            this.btn_outputPriorities.Location = new System.Drawing.Point(1269, 738);
             this.btn_outputPriorities.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_outputPriorities.Name = "btn_outputPriorities";
-            this.btn_outputPriorities.Size = new System.Drawing.Size(252, 34);
+            this.btn_outputPriorities.Size = new System.Drawing.Size(39, 34);
             this.btn_outputPriorities.TabIndex = 20;
             this.btn_outputPriorities.Text = "output priorities";
             this.btn_outputPriorities.UseVisualStyleBackColor = true;
@@ -345,18 +346,31 @@
             this.lbl_database.AutoSize = true;
             this.lbl_database.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_database.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.lbl_database.Location = new System.Drawing.Point(206, 51);
+            this.lbl_database.Location = new System.Drawing.Point(130, 46);
             this.lbl_database.Name = "lbl_database";
             this.lbl_database.Size = new System.Drawing.Size(97, 22);
             this.lbl_database.TabIndex = 22;
             this.lbl_database.Text = "Database: ";
+            // 
+            // btn_combineDBs
+            // 
+            this.btn_combineDBs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_combineDBs.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btn_combineDBs.Location = new System.Drawing.Point(1269, 34);
+            this.btn_combineDBs.Name = "btn_combineDBs";
+            this.btn_combineDBs.Size = new System.Drawing.Size(159, 33);
+            this.btn_combineDBs.TabIndex = 23;
+            this.btn_combineDBs.Text = "Combine db Files";
+            this.btn_combineDBs.UseVisualStyleBackColor = true;
+            this.btn_combineDBs.Click += new System.EventHandler(this.btn_combineDBs_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1395, 744);
+            this.ClientSize = new System.Drawing.Size(1489, 894);
+            this.Controls.Add(this.btn_combineDBs);
             this.Controls.Add(this.lbl_database);
             this.Controls.Add(this.lbl_DB);
             this.Controls.Add(this.btn_outputPriorities);
@@ -412,6 +426,7 @@
         private System.Windows.Forms.Button btn_OpenSearchForm;
         private System.Windows.Forms.Label lbl_DB;
         private System.Windows.Forms.Label lbl_database;
+        private System.Windows.Forms.Button btn_combineDBs;
     }
 }
 

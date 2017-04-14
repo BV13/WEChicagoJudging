@@ -17,3 +17,4 @@ C:\Users\Barry\Documents\Visual Studio 2015\Projects\WE2017AwardsProgram\Chicago
 C:\Users\Barry\Documents\Visual Studio 2015\Projects\WE2017AwardsProgram\ChicagoAwards\obj\Debug\ChicagoAwards.application
 C:\Users\Barry\Documents\Visual Studio 2015\Projects\WE2017AwardsProgram\ChicagoAwards\obj\Debug\ChicagoAwards.exe
 C:\Users\Barry\Documents\Visual Studio 2015\Projects\WE2017AwardsProgram\ChicagoAwards\obj\Debug\ChicagoAwards.pdb
+C:\Users\Barry\Documents\Visual Studio 2015\Projects\WE2017AwardsProgram\ChicagoAwards\obj\Debug\WE2017Awards.CombineDatabases.resources

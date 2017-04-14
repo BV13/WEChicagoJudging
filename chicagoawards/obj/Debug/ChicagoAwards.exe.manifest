@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ChicagoAwards.exe" size="66048">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ChicagoAwards.exe" size="69120">
       <assemblyIdentity name="ChicagoAwards" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PNW1aWCkvt8LFvphGhb2s/m2VMKDKZoOWoeEBkH+c04=</dsig:DigestValue>
+        <dsig:DigestValue>2YWS2NukbBw6a85ngpqkwRy4xn2HsL6mhkmbIMMYOmc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
