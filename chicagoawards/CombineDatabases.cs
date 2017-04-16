@@ -37,6 +37,10 @@ namespace WE2017Awards
             lbx_CombineDatabases.Items.Clear();
         }
 
-
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            lbx_CombineDatabases.Items.Clear();
+            this.Close();
+        }
     }
 }

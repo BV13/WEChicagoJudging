@@ -30,8 +30,8 @@
         {
             this.lbx_CombineDatabases = new System.Windows.Forms.ListBox();
             this.btn_AddDBsToCombine = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.btn_Combine = new System.Windows.Forms.Button();
             this.btn_ClearList = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             this.lbx_CombineDatabases.ItemHeight = 20;
             this.lbx_CombineDatabases.Location = new System.Drawing.Point(40, 113);
             this.lbx_CombineDatabases.Name = "lbx_CombineDatabases";
-            this.lbx_CombineDatabases.Size = new System.Drawing.Size(736, 302);
+            this.lbx_CombineDatabases.Size = new System.Drawing.Size(1077, 302);
             this.lbx_CombineDatabases.TabIndex = 0;
             // 
             // btn_AddDBsToCombine
@@ -58,28 +58,29 @@
             this.btn_AddDBsToCombine.UseVisualStyleBackColor = true;
             this.btn_AddDBsToCombine.Click += new System.EventHandler(this.btn_AddDBsToCombine_Click);
             // 
-            // button1
+            // btn_Cancel
             // 
-            this.button1.Location = new System.Drawing.Point(99, 638);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 40);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Location = new System.Drawing.Point(99, 638);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(113, 40);
+            this.btn_Cancel.TabIndex = 2;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
-            // button2
+            // btn_Combine
             // 
-            this.button2.Location = new System.Drawing.Point(603, 638);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 40);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Combine.Location = new System.Drawing.Point(915, 638);
+            this.btn_Combine.Name = "btn_Combine";
+            this.btn_Combine.Size = new System.Drawing.Size(189, 40);
+            this.btn_Combine.TabIndex = 3;
+            this.btn_Combine.Text = "Combine Databases";
+            this.btn_Combine.UseVisualStyleBackColor = true;
             // 
             // btn_ClearList
             // 
             this.btn_ClearList.BackColor = System.Drawing.Color.LightCoral;
-            this.btn_ClearList.Location = new System.Drawing.Point(621, 48);
+            this.btn_ClearList.Location = new System.Drawing.Point(963, 48);
             this.btn_ClearList.Name = "btn_ClearList";
             this.btn_ClearList.Size = new System.Drawing.Size(154, 41);
             this.btn_ClearList.TabIndex = 4;
@@ -92,7 +93,7 @@
             this.textBox1.Location = new System.Drawing.Point(40, 498);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(625, 44);
+            this.textBox1.Size = new System.Drawing.Size(982, 44);
             this.textBox1.TabIndex = 5;
             // 
             // label1
@@ -106,7 +107,7 @@
             // 
             // btn_BrowseToOutput
             // 
-            this.btn_BrowseToOutput.Location = new System.Drawing.Point(686, 498);
+            this.btn_BrowseToOutput.Location = new System.Drawing.Point(1028, 498);
             this.btn_BrowseToOutput.Name = "btn_BrowseToOutput";
             this.btn_BrowseToOutput.Size = new System.Drawing.Size(89, 44);
             this.btn_BrowseToOutput.TabIndex = 7;
@@ -117,13 +118,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 720);
+            this.ClientSize = new System.Drawing.Size(1169, 720);
             this.Controls.Add(this.btn_BrowseToOutput);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_ClearList);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Combine);
+            this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_AddDBsToCombine);
             this.Controls.Add(this.lbx_CombineDatabases);
             this.Name = "CombineDatabases";
@@ -137,8 +138,8 @@
 
         private System.Windows.Forms.ListBox lbx_CombineDatabases;
         private System.Windows.Forms.Button btn_AddDBsToCombine;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Cancel;
+        private System.Windows.Forms.Button btn_Combine;
         private System.Windows.Forms.Button btn_ClearList;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
