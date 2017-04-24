@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.group_AddAward = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_table = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_ID = new System.Windows.Forms.TextBox();
-            this.btn_Cancel = new System.Windows.Forms.Button();
-            this.btn_Save = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,15 +41,17 @@
             this.txt_LastName = new System.Windows.Forms.TextBox();
             this.txt_FirstName = new System.Windows.Forms.TextBox();
             this.cbo_Award = new System.Windows.Forms.ComboBox();
+            this.btn_Cancel = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
             this.group_AddAward.SuspendLayout();
             this.SuspendLayout();
             // 
             // group_AddAward
             // 
+            this.group_AddAward.Controls.Add(this.label6);
+            this.group_AddAward.Controls.Add(this.txt_table);
             this.group_AddAward.Controls.Add(this.label5);
             this.group_AddAward.Controls.Add(this.txt_ID);
-            this.group_AddAward.Controls.Add(this.btn_Cancel);
-            this.group_AddAward.Controls.Add(this.btn_Save);
             this.group_AddAward.Controls.Add(this.label4);
             this.group_AddAward.Controls.Add(this.label3);
             this.group_AddAward.Controls.Add(this.label2);
@@ -68,6 +70,26 @@
             this.group_AddAward.TabIndex = 8;
             this.group_AddAward.TabStop = false;
             this.group_AddAward.Text = "Edit Entry";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1032, 125);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 24);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Table";
+            // 
+            // txt_table
+            // 
+            this.txt_table.Location = new System.Drawing.Point(1036, 158);
+            this.txt_table.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_table.Name = "txt_table";
+            this.txt_table.Size = new System.Drawing.Size(91, 31);
+            this.txt_table.TabIndex = 14;
+            this.txt_table.TextChanged += new System.EventHandler(this.txt_table_TextChanged);
+            this.txt_table.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_table_KeyPress);
             // 
             // label5
             // 
@@ -89,29 +111,6 @@
             this.txt_ID.Size = new System.Drawing.Size(403, 31);
             this.txt_ID.TabIndex = 12;
             // 
-            // btn_Cancel
-            // 
-            this.btn_Cancel.Location = new System.Drawing.Point(1154, 157);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(118, 42);
-            this.btn_Cancel.TabIndex = 11;
-            this.btn_Cancel.Text = "Cancel";
-            this.btn_Cancel.UseVisualStyleBackColor = true;
-            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
-            // 
-            // btn_Save
-            // 
-            this.btn_Save.Enabled = false;
-            this.btn_Save.Location = new System.Drawing.Point(966, 157);
-            this.btn_Save.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(156, 42);
-            this.btn_Save.TabIndex = 5;
-            this.btn_Save.Text = "Save Edits";
-            this.btn_Save.UseVisualStyleBackColor = true;
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -125,7 +124,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(297, 42);
+            this.label3.Location = new System.Drawing.Point(261, 42);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 24);
@@ -135,7 +134,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(666, 42);
+            this.label2.Location = new System.Drawing.Point(612, 46);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 24);
@@ -154,7 +153,7 @@
             // 
             // txt_Title
             // 
-            this.txt_Title.Location = new System.Drawing.Point(670, 75);
+            this.txt_Title.Location = new System.Drawing.Point(616, 75);
             this.txt_Title.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Title.Name = "txt_Title";
             this.txt_Title.Size = new System.Drawing.Size(600, 31);
@@ -163,7 +162,7 @@
             // 
             // txt_LastName
             // 
-            this.txt_LastName.Location = new System.Drawing.Point(302, 74);
+            this.txt_LastName.Location = new System.Drawing.Point(265, 75);
             this.txt_LastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_LastName.Name = "txt_LastName";
             this.txt_LastName.Size = new System.Drawing.Size(322, 31);
@@ -189,12 +188,37 @@
             this.cbo_Award.TabIndex = 4;
             this.cbo_Award.SelectedIndexChanged += new System.EventHandler(this.cbo_Award_SelectedIndexChanged);
             // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Location = new System.Drawing.Point(706, 294);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(118, 42);
+            this.btn_Cancel.TabIndex = 11;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.Enabled = false;
+            this.btn_Save.Location = new System.Drawing.Point(420, 294);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(156, 42);
+            this.btn_Save.TabIndex = 5;
+            this.btn_Save.Text = "Save Edits";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
             // EditEntryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1326, 297);
+            this.ClientSize = new System.Drawing.Size(1326, 369);
             this.Controls.Add(this.group_AddAward);
+            this.Controls.Add(this.btn_Save);
+            this.Controls.Add(this.btn_Cancel);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "EditEntryForm";
             this.Text = "Edit Selected Entry";
@@ -220,5 +244,7 @@
         public System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox txt_ID;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox txt_table;
     }
 }

@@ -61,19 +61,35 @@ namespace WE2017Awards
             this.btn_Save.Enabled = true;
         }
 
+        private void txt_table_TextChanged(object sender, EventArgs e)
+        {
+            this.btn_Save.Enabled = true;
+        }
+
         private void btn_Save_Click(object sender, EventArgs e)
         {
-           DataAccess.updateAward(txt_ID.Text,cbo_Award.SelectedValue.ToString(),txt_FirstName.Text,txt_LastName.Text,txt_Title.Text);
+            DataAccess.updateAward(txt_ID.Text, cbo_Award.SelectedValue.ToString(), txt_FirstName.Text, txt_LastName.Text, txt_Title.Text, Convert.ToInt32(txt_table.Text));
             this.Close();
             if (this.dgv.Name == "dgv_SearchResults")
             {
-                DataAccess.loadSearchResultsDataGrid( dgv, this.fName, this.lName, this.title);
+                DataAccess.loadSearchResultsDataGrid(dgv, this.fName, this.lName, this.title);
             }
             else
             {
                 DataAccess.loadAwardsDataGrid(this.dgv);
             }
-            
+
         }
+
+        private void txt_table_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //make sure only integers can be put in table box
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) )
+            {
+                e.Handled = true;
+            }
+        }
+
+
     }
 }

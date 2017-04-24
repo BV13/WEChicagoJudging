@@ -83,7 +83,7 @@ namespace WE2017Awards
         public static void loadAwardsDataGrid(DataGridView dataGridView)
         {
             //string connString = "Data Source = WE2017Awards.sqlite";
-            string mSQL = "SELECT * from Awards WHERE Year = '" +
+            string mSQL = "SELECT FirstName, LastName, Title, Award, ID, Location from Awards WHERE Year = '" +
                 Form1.showYear.ToString() + "' ORDER BY ROWID DESC";//So new
             DataTable dt = new DataTable();
             DataSet ds = new DataSet();
@@ -125,7 +125,7 @@ namespace WE2017Awards
             }
         }
 
-        public static void addAward(String awardID, String award, String firstName, String lastName, String title, String year)
+        public static void addAward(String awardID, String award, String firstName, String lastName, String title, String year, int location)
         {
             double priority = (from DataRow dr in awardCodes.Rows
                                where (string)dr["Code"] == award
@@ -137,7 +137,7 @@ namespace WE2017Awards
                 throw new Exception("That item already exists.");
             }
 
-            string sql = "INSERT INTO Awards (FirstName, LastName, ID, Title, Award, Year, Priority) values (@FirstName, @LastName, @awardID, @Title, @Award, @Year, @Priority)";
+            string sql = "INSERT INTO Awards (FirstName, LastName, ID, Title, Award, Year, Priority, Location) values (@FirstName, @LastName, @awardID, @Title, @Award, @Year, @Priority, @Location)";
             using (SQLiteConnection con = new SQLiteConnection(connString))
             {
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, con))
@@ -150,6 +150,7 @@ namespace WE2017Awards
                     cmd.Parameters.Add(new SQLiteParameter("@awardID", awardID));
                     cmd.Parameters.Add(new SQLiteParameter("@award", award));
                     cmd.Parameters.Add(new SQLiteParameter("@Priority", priority));
+                    cmd.Parameters.Add(new SQLiteParameter("@Location", location));
 
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -157,7 +158,7 @@ namespace WE2017Awards
             }
         }
 
-        public static void updateAward(String awardID, String award, String firstName, String lastName, String title)
+        public static void updateAward(String awardID, String award, String firstName, String lastName, String title, int location)
         {
             double priority = (from DataRow dr in awardCodes.Rows
                                where (string)dr["Code"] == award
@@ -171,7 +172,7 @@ namespace WE2017Awards
                     throw new Exception("Entry not found.");
                 }
 
-                string sql = "UPDATE Awards SET FirstName ='" + firstName +
+                string sql = "UPDATE Awards SET Location = " + location + ", FirstName ='" + firstName +
                     "', LastName = '" + lastName + "', Award = '" + award +
                     "', Title = '" + title + "', Priority = '" + priority +
                     "', ID = '" + firstName + lastName + award + "' WHERE ID = '" +
@@ -348,6 +349,7 @@ namespace WE2017Awards
                 var testoBBJ = editForm.cbo_Award.DataSource;
                 editForm.cbo_Award.SelectedValue =  dgv.Rows[e.RowIndex].Cells["Award"].Value.ToString();
                 editForm.txt_ID.Text = dgv.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+                editForm.txt_table.Text = dgv.Rows[e.RowIndex].Cells["Location"].Value.ToString();
                 editForm.Show();
                 editForm.btn_Save.Enabled = false;
             }

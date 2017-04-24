@@ -98,6 +98,12 @@ namespace WE2017Awards
                     MessageBox.Show("Do not enter a title for " + cbo_Award.Text + ".\r\nENTRY NOT SAVED");
                     return;
                 }
+                if (txt_location.Text == "")
+                {
+                    MessageBox.Show("Please enter a location (table #)\r\n Enter ''0'' if unknown. \r\n ENTRY NOT SAVED");
+                    txt_location.Focus();
+                    return;
+                }
 
 
                 Regex rgx = new Regex("[^a-zA-Z]");
@@ -106,8 +112,9 @@ namespace WE2017Awards
                 String lastName = txt_LastName.Text;
                 String title = txt_Title.Text;
                 String year = txt_Year.Text;
+                int location = Convert.ToInt32(txt_location.Text);
 
-                DataAccess.addAward(awardID, award, firstName, lastName, title, year);
+                DataAccess.addAward(awardID, award, firstName, lastName, title, year, location);
                 DataAccess.loadAwardsDataGrid(dgv_awards);
                 flashMessage("Entry Saved");
             }
@@ -116,6 +123,7 @@ namespace WE2017Awards
                 MessageBox.Show(ex.Message);
             }
             clearEntryFields();
+            txt_FirstName.Focus();
 
         }
 
@@ -149,7 +157,7 @@ namespace WE2017Awards
             lbl_Message.Text = message;
             lbl_Message.Visible = true;
             var t = new Timer();
-            t.Interval = 1000; // it will Tick in 3 seconds
+            t.Interval = 2000; // it will Tick in 3 seconds
             t.Tick += (s, e) =>
             {
                 lbl_Message.Text = string.Empty;
@@ -239,6 +247,14 @@ namespace WE2017Awards
         {
             CombineDatabases cdb = new CombineDatabases();
             cdb.Show();
+        }
+
+        private void txt_location_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

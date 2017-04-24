@@ -34,6 +34,8 @@
             this.txt_LastName = new System.Windows.Forms.TextBox();
             this.txt_Title = new System.Windows.Forms.TextBox();
             this.group_AddAward = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_location = new System.Windows.Forms.TextBox();
             this.btn_OpenSearchForm = new System.Windows.Forms.Button();
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_ResetFields = new System.Windows.Forms.Button();
@@ -91,7 +93,7 @@
             // 
             // txt_LastName
             // 
-            this.txt_LastName.Location = new System.Drawing.Point(302, 74);
+            this.txt_LastName.Location = new System.Drawing.Point(277, 75);
             this.txt_LastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_LastName.Name = "txt_LastName";
             this.txt_LastName.Size = new System.Drawing.Size(322, 31);
@@ -99,7 +101,7 @@
             // 
             // txt_Title
             // 
-            this.txt_Title.Location = new System.Drawing.Point(666, 74);
+            this.txt_Title.Location = new System.Drawing.Point(633, 75);
             this.txt_Title.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Title.Name = "txt_Title";
             this.txt_Title.Size = new System.Drawing.Size(600, 31);
@@ -107,6 +109,8 @@
             // 
             // group_AddAward
             // 
+            this.group_AddAward.Controls.Add(this.label6);
+            this.group_AddAward.Controls.Add(this.txt_location);
             this.group_AddAward.Controls.Add(this.btn_OpenSearchForm);
             this.group_AddAward.Controls.Add(this.btn_Save);
             this.group_AddAward.Controls.Add(this.btn_ResetFields);
@@ -129,6 +133,24 @@
             this.group_AddAward.TabStop = false;
             this.group_AddAward.Text = "Add Award";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1256, 43);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 24);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Table";
+            // 
+            // txt_location
+            // 
+            this.txt_location.Location = new System.Drawing.Point(1260, 75);
+            this.txt_location.Name = "txt_location";
+            this.txt_location.Size = new System.Drawing.Size(64, 31);
+            this.txt_location.TabIndex = 5;
+            this.txt_location.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_location_KeyPress);
+            // 
             // btn_OpenSearchForm
             // 
             this.btn_OpenSearchForm.Location = new System.Drawing.Point(915, 157);
@@ -146,7 +168,7 @@
             this.btn_Save.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(156, 42);
-            this.btn_Save.TabIndex = 5;
+            this.btn_Save.TabIndex = 6;
             this.btn_Save.Text = "Save Entry";
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
@@ -175,7 +197,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(297, 42);
+            this.label3.Location = new System.Drawing.Point(273, 42);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 24);
@@ -185,7 +207,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(666, 42);
+            this.label2.Location = new System.Drawing.Point(629, 42);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 24);
@@ -272,7 +294,7 @@
             // 
             this.lbl_Message.AutoSize = true;
             this.lbl_Message.Font = new System.Drawing.Font("Book Antiqua", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Message.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lbl_Message.ForeColor = System.Drawing.Color.Green;
             this.lbl_Message.Location = new System.Drawing.Point(660, 34);
             this.lbl_Message.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Message.Name = "lbl_Message";
@@ -370,6 +392,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1489, 894);
+            this.Controls.Add(this.lbl_Message);
             this.Controls.Add(this.btn_combineDBs);
             this.Controls.Add(this.lbl_database);
             this.Controls.Add(this.lbl_DB);
@@ -377,7 +400,6 @@
             this.Controls.Add(this.btn_GenerateAwardCounts);
             this.Controls.Add(this.btn_GenerateAwardsHTML);
             this.Controls.Add(this.btn_GeneratePhotoList);
-            this.Controls.Add(this.lbl_Message);
             this.Controls.Add(this.btn_GenerateReport);
             this.Controls.Add(this.btn_GeneratePresentation);
             this.Controls.Add(this.btn_Exit);
@@ -427,6 +449,8 @@
         private System.Windows.Forms.Label lbl_DB;
         private System.Windows.Forms.Label lbl_database;
         private System.Windows.Forms.Button btn_combineDBs;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt_location;
     }
 }
 

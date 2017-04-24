@@ -13,7 +13,7 @@ namespace WE2017Awards
 {
     class Outputter
     {
-        private string awardsBookTitle = "\tAWARDS PRESENTED AT THE " + Form1.showYear + " CHICAGO SHOW" + Environment.NewLine + Environment.NewLine;
+        private string awardsBookTitle = "\tAWARDS PRESENTED AT THE " + Form1.showYear + " WORLD EXPO CHICAGO" + Environment.NewLine + Environment.NewLine;
         string missingPhotoList = string.Empty;
 
         public void outputAwardsCount()
@@ -22,30 +22,17 @@ namespace WE2017Awards
             System.Data.DataTable silverWinners = DataAccess.getAwardsByPriority("BETWEEN 6 AND 6.9");
             System.Data.DataTable bronzeWinners = DataAccess.getAwardsByPriority("BETWEEN 7 AND 7.9");
             System.Data.DataTable certificateWinners = DataAccess.getAwardsByPriority("BETWEEN 8 AND 8.9");
-            System.Data.DataTable BasicCertificateWinners = DataAccess.getAwardsByPriority("= 10.1");
-            System.Data.DataTable GeneralCertificateWinners = DataAccess.getAwardsByPriority("= 9.2");
-            System.Data.DataTable GeneralMedalWinners = DataAccess.getAwardsByPriority("= 9.1");
+            System.Data.DataTable BasicCertificateWinners = DataAccess.getAwardsByPriority("= 9.2");
+            System.Data.DataTable BasicMedalWinners = DataAccess.getAwardsByPriority("= 9.1");
 
             System.Data.DataTable JuniorCertificateWinners = DataAccess.getAwardsByPriority("= 15.2");
-            System.Data.DataTable JuniorAwardWinners = DataAccess.getAwardsByPriority("= 15.1");
 
-            System.Data.DataTable WargamesCertificateWinners = DataAccess.getAwardsByPriority("= 14.2");
-            System.Data.DataTable WargamesAwardWinners = DataAccess.getAwardsByPriority("= 14.1");
-
-            System.Data.DataTable AntiqueCertificateWinners = DataAccess.getAwardsByPriority("= 13.2");
-            System.Data.DataTable AntiqueAwardWinners = DataAccess.getAwardsByPriority("= 13.1");
-
-            System.Data.DataTable DisplayersCertificateWinners = DataAccess.getAwardsByPriority("= 12.2");
-            System.Data.DataTable DisplayersAwardWinners = DataAccess.getAwardsByPriority("= 12.1");
-
-            System.Data.DataTable ThemeCertificateWinners = DataAccess.getAwardsByPriority("= 11.2");
-            System.Data.DataTable ThemeAwardWinners = DataAccess.getAwardsByPriority("= 11.1");
 
 
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
             saveFileDialog1.Filter = "txt files (*.txt)|*.txt";
-            saveFileDialog1.FileName = "MMSI" + Form1.showYear + "AwardsCount.txt";
+            saveFileDialog1.FileName = "WorldExpo" + Form1.showYear + "_AwardsCount.txt";
             saveFileDialog1.FilterIndex = 2;
             saveFileDialog1.RestoreDirectory = true;
 
@@ -54,39 +41,21 @@ namespace WE2017Awards
                 using (System.IO.StreamWriter file =
                     new System.IO.StreamWriter(saveFileDialog1.FileName))
                 {
-                    file.WriteLine("CHICAGO SHOW " + Form1.showYear + " AWARDS TOTALS\r\n");
+                    file.WriteLine("WORLD EXPO CHICAGO " + Form1.showYear + " AWARDS TOTALS\r\n");
                     file.WriteLine("ADVANCED LEVEL\r\n");
                     file.WriteLine("GOLD----------" + goldWinners.Rows.Count);
                     file.WriteLine("SILVER--------" + silverWinners.Rows.Count);
                     file.WriteLine("BRONZE--------" + bronzeWinners.Rows.Count);
                     file.WriteLine("CERTIFICATES--" + certificateWinners.Rows.Count);
                     file.WriteLine("\r\n_________________\r\n");
-                    file.WriteLine("GENERAL LEVEL\r\n");
-                    file.WriteLine("CERTIFICATES--" + GeneralCertificateWinners.Rows.Count);
-                    file.WriteLine("MEDALS--------" + GeneralMedalWinners.Rows.Count);
-                    file.WriteLine("\r\n_________________\r\n");
                     file.WriteLine("BASIC LEVEL\r\n");
+                    file.WriteLine("MEDALS--" + BasicMedalWinners.Rows.Count);
                     file.WriteLine("CERTIFICATES--" + BasicCertificateWinners.Rows.Count);
                     file.WriteLine("\r\n_________________\r\n");
                     file.WriteLine("JUNIORS\r\n");
                     file.WriteLine("CERTIFICATES--" + JuniorCertificateWinners.Rows.Count);
-                    file.WriteLine("AWARDS--------" + JuniorAwardWinners.Rows.Count);
                     file.WriteLine("\r\n_________________\r\n");
-                    file.WriteLine("WAR GAMES\r\n");
-                    file.WriteLine("CERTIFICATES--" + WargamesCertificateWinners.Rows.Count);
-                    file.WriteLine("AWARDS--------" + WargamesAwardWinners.Rows.Count);
-                    file.WriteLine("\r\n_________________\r\n");
-                    file.WriteLine("ANTIQUE FIGURES\r\n");
-                    file.WriteLine("CERTIFICATES--" + AntiqueCertificateWinners.Rows.Count);
-                    file.WriteLine("AWARDS--------" + AntiqueAwardWinners.Rows.Count);
-                    file.WriteLine("\r\n_________________\r\n");
-                    file.WriteLine("DISPLAYERS\r\n");
-                    file.WriteLine("CERTIFICATES--" + DisplayersCertificateWinners.Rows.Count);
-                    file.WriteLine("AWARDS--------" + DisplayersAwardWinners.Rows.Count);
-                    file.WriteLine("\r\n_________________\r\n");
-                    file.WriteLine("THEME\r\n");
-                    file.WriteLine("CERTIFICATES--" + ThemeCertificateWinners.Rows.Count);
-                    file.WriteLine("AWARDS--------" + ThemeAwardWinners.Rows.Count);
+                   
 
                 }
             }
@@ -97,7 +66,10 @@ namespace WE2017Awards
         {
             System.Data.DataTable goldWinners = DataAccess.getAwardsByPriority("BETWEEN 5 AND 5.9");
             System.Data.DataTable BOSWinner = DataAccess.getAwardsByPriority("= 2");
-            System.Data.DataTable ChicagoMedalWinners = DataAccess.getAwardsByPriority("= 1");
+            DataView dv = goldWinners.DefaultView;
+            dv.Sort = "Location asc";
+            System.Data.DataTable sortedGoldWinners = dv.ToTable();
+            // System.Data.DataTable ChicagoMedalWinners = DataAccess.getAwardsByPriority("= 1");
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
             saveFileDialog1.Filter = "txt files (*.txt)|*.txt";
@@ -111,17 +83,18 @@ namespace WE2017Awards
                 using (System.IO.StreamWriter file =
                     new System.IO.StreamWriter(saveFileDialog1.FileName))
                 {
-                    file.WriteLine("CHICAGO SHOW " + Form1.showYear + " PHOTO NAMES LIST");
-                    file.WriteLine("The photos for the pieces listed need to conform to the\r\n" +
-                        "given naming convention to appear in the awards presentation.\r\n");
+                    file.WriteLine("WORLD EXPO " + Form1.showYear + " PHOTO NAMES LIST");
+                    file.WriteLine("The photos for the pieces listed need to be named as shown on this list\r\n" +
+                        "to appear in the awards presentation.\r\n");
                     file.WriteLine("GOLD WINNERS");
-                    foreach (DataRow row in goldWinners.Rows)
+                    foreach (DataRow row in sortedGoldWinners.Rows)
                     {
                         String first = row["FirstName"].ToString();
                         String last = row["LastName"].ToString();
                         String title = row["Title"].ToString();
                         String category = row["Award"].ToString();
                         String photoName = row["ID"].ToString();
+                        String table = row["Location"].ToString();
                         String awardName = (from DataRow dr in DataAccess.awardCodes.Rows
                                             where (string)dr["Code"] == category
                                             select (string)dr["Award"]).FirstOrDefault();
@@ -132,7 +105,7 @@ namespace WE2017Awards
                             file.WriteLine(awardName.ToUpper());
                             previousPriority = category;
                         }
-                        file.WriteLine("\t" + first + " " + last + "-" + title + "-" + photoName + ".jpg");
+                        file.WriteLine("\t" + first + " " + last + "-" + title +  " TABLE: " + table + " - " + photoName + ".jpg\r\n");
                     }
 
                 }
@@ -145,7 +118,7 @@ namespace WE2017Awards
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
             saveFileDialog1.Filter = "txt files (*.txt)|*.txt";
-            saveFileDialog1.FileName = "MMSI" + Form1.showYear + "AwardsBook.txt";
+            saveFileDialog1.FileName = "WorldExpo" + Form1.showYear + "_AwardsBook.txt";
             saveFileDialog1.FilterIndex = 2;
             saveFileDialog1.RestoreDirectory = true;
 
@@ -158,30 +131,33 @@ namespace WE2017Awards
                     foreach (DataRow row in DataAccess.awardCodes.Rows)
                     {
 
-                        file.WriteLine(addAppropriatePreamble(Convert.ToDouble(row["Priority"])));
+                        //file.WriteLine(addAppropriatePreamble(Convert.ToDouble(row["Priority"])));
+                        file.WriteLine("-----------------------------------------------------\r\n");
 
                         file.WriteLine(row["Award"].ToString().ToUpper());
+                        file.WriteLine("\r");
+
                         System.Data.DataTable tableOFAwards = DataAccess.getAwardsByType(row["Code"].ToString());
 
                         if (tableOFAwards.Rows.Count < 1)
-                        { file.WriteLine("No awards given."); }
+                        { file.WriteLine("no  awards  given."); }
                         else
                         {
                             foreach (DataRow award in tableOFAwards.Rows)
                             {
                                 if (new[] { "1", "3", "4" }.Contains(row["Priority"].ToString()))
                                 {
-                                    file.WriteLine("\t" + award["FirstName"].ToString() + " " +
-                                    award["LastName"].ToString());
+                                    file.WriteLine(" -" + award["FirstName"].ToString() + " " +
+                                    award["LastName"].ToString()+"\r\n");
                                 }
                                 else
                                 {
-                                    file.WriteLine("\t" + award["FirstName"].ToString() + " " +
-                                        award["LastName"].ToString() + " - " + award["Title"].ToString());
+                                    file.WriteLine(" -"+ award["FirstName"].ToString() + " " +
+                                        award["LastName"].ToString() + " - " + award["Title"].ToString() + "\r\n");
                                 }
                             }
                         }
-                        //file.WriteLine("   -    -    -    -    -    -    -");
+                        
                     }
                 }
             }

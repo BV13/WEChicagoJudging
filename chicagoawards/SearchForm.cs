@@ -101,6 +101,7 @@ namespace WE2017Awards
                 editForm.txt_Title.Text = dgv.Rows[e.RowIndex].Cells["Title"].Value.ToString();
                 editForm.cbo_Award.SelectedValue = dgv.Rows[e.RowIndex].Cells["Award"].Value.ToString();
                 editForm.txt_ID.Text = dgv.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+                editForm.txt_table.Text = dgv.Rows[e.RowIndex].Cells["Location"].Value.ToString();
                 editForm.Show();
                 editForm.btn_Save.Enabled = false;    
             }
