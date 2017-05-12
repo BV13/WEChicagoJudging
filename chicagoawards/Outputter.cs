@@ -325,7 +325,7 @@ namespace WE2017Awards
 
             try
             {
-                MessageBox.Show("Select the file 'mmsiTemplate.ppt.' \r\nThe presentation will be saved in the same folderx.");
+                MessageBox.Show("Select the file 'WE2017Template.ppt.' \r\nThe presentation will be saved in the same folder.");
                 OpenFileDialog openFileDialog1 = new OpenFileDialog();
                 openFileDialog1.Filter = "powerpoint files (*.ppt)|*.ppt";
                 openFileDialog1.FilterIndex = 2;
@@ -336,9 +336,9 @@ namespace WE2017Awards
                 {
                     try
                     {
-                        if (!openFileDialog1.FileName.Contains("mmsitemplate.ppt"))
+                        if (!openFileDialog1.FileName.Contains("WE2017Template.ppt"))
                         {
-                            throw new Exception("The file chosen must be mmsitemplate.ppt.");
+                            throw new Exception("The file chosen must be WE2017Template.ppt.");
                         }
 
                         presentationTemplatePath = openFileDialog1.FileName;
@@ -388,7 +388,7 @@ namespace WE2017Awards
                                         sIndex = 361;
                                         break;
                                     case "HOG":
-                                        sIndex = 540;
+                                        sIndex = 365;
                                         break;
                                     case "FPG":
                                         sIndex = 354;
@@ -412,7 +412,7 @@ namespace WE2017Awards
                             objText.Font.Name = "Lucida Sans";
                             objText.Font.Size = 40;
 
-                            objText = slide.Shapes[2].TextFrame.TextRange;
+                                objText = slide.Shapes[2].TextFrame.TextRange;
                             objText.Text = award["FirstName"] + " " + award["LastName"] + "\n\n" + award["Title"].ToString();
 
                             Microsoft.Office.Interop.PowerPoint.Shape shape = slide.Shapes[2];
@@ -440,7 +440,7 @@ namespace WE2017Awards
                 if (dtBOS.Rows.Count > 0)
                 {
 
-                    Microsoft.Office.Interop.PowerPoint._Slide OOGTitleSlide = slides.FindBySlideID(364);
+                    Microsoft.Office.Interop.PowerPoint._Slide OOGTitleSlide = slides.FindBySlideID(540);
                     int PlacementIndex = OOGTitleSlide.SlideIndex;
                     slide = slides.AddSlide(PlacementIndex, pptPresentation.SlideMaster.CustomLayouts[1]);
 
@@ -466,34 +466,34 @@ namespace WE2017Awards
                     slide.Shapes.AddPicture(photoPath, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue, 20, shape.Top, shape.Width, shape.Height);
                 }
 
-                //Now add Chicago Medalist(s)
-                System.Data.DataTable dtCM = DataAccess.getAwardsByPriority(" = 1");
-                if (dtCM.Rows.Count > 0 && dtCM.Rows.Count < 3)
-                {
+                ////Now add Chicago Medalist(s)
+                //System.Data.DataTable dtCM = DataAccess.getAwardsByPriority(" = 1");
+                //if (dtCM.Rows.Count > 0 && dtCM.Rows.Count < 3)
+                //{
 
-                    Microsoft.Office.Interop.PowerPoint._Slide OOGTitleSlide = slides.FindBySlideID(364);
-                    int PlacementIndex = OOGTitleSlide.SlideIndex + 1;
-                    slide = slides.AddSlide(PlacementIndex, pptPresentation.SlideMaster.CustomLayouts[2]);
+                //    Microsoft.Office.Interop.PowerPoint._Slide OOGTitleSlide = slides.FindBySlideID(364);
+                //    int PlacementIndex = OOGTitleSlide.SlideIndex + 1;
+                //    slide = slides.AddSlide(PlacementIndex, pptPresentation.SlideMaster.CustomLayouts[2]);
 
-                    // Add title
-                    objText = slide.Shapes[1].TextFrame.TextRange;
-                    objText.Text = "Chicago Medal";
-                    objText.Font.Name = "Lucida Sans";
-                    objText.Font.Size = 40;
+                //    // Add title
+                //    objText = slide.Shapes[1].TextFrame.TextRange;
+                //    objText.Text = "Chicago Medal";
+                //    objText.Font.Name = "Lucida Sans";
+                //    objText.Font.Size = 40;
 
-                    objText = slide.Shapes[2].TextFrame.TextRange;
-                    objText.Text = dtCM.Rows[0]["FirstName"] + " " + dtCM.Rows[0]["LastName"];
-                    Microsoft.Office.Interop.PowerPoint.Shape shape = slide.Shapes[2];
+                //    objText = slide.Shapes[2].TextFrame.TextRange;
+                //    objText.Text = dtCM.Rows[0]["FirstName"] + " " + dtCM.Rows[0]["LastName"];
+                //    Microsoft.Office.Interop.PowerPoint.Shape shape = slide.Shapes[2];
 
-                    if (dtCM.Rows.Count == 2) { 
-                    objText = slide.Shapes[3].TextFrame.TextRange;
-                    objText.Text = dtCM.Rows[1]["FirstName"] + " " + dtCM.Rows[1]["LastName"];
-                    Microsoft.Office.Interop.PowerPoint.Shape secShape = slide.Shapes[3];
-                     }
+                //    if (dtCM.Rows.Count == 2) { 
+                //    objText = slide.Shapes[3].TextFrame.TextRange;
+                //    objText.Text = dtCM.Rows[1]["FirstName"] + " " + dtCM.Rows[1]["LastName"];
+                //    Microsoft.Office.Interop.PowerPoint.Shape secShape = slide.Shapes[3];
+                //     }
 
-                }
+                //}
 
-                pptPresentation.SaveAs(Path.GetDirectoryName(presentationTemplatePath) + @"\MMSI" + Form1.showYear + ".pptx", PpSaveAsFileType.ppSaveAsDefault, MsoTriState.msoTrue);
+                pptPresentation.SaveAs(Path.GetDirectoryName(presentationTemplatePath) + @"\WorldExpo" + Form1.showYear + ".pptx", PpSaveAsFileType.ppSaveAsDefault, MsoTriState.msoTrue);
                 pptPresentation.Close();
                 pptApplication.Quit();
             }

@@ -55,7 +55,6 @@
             this.btn_outputPriorities = new System.Windows.Forms.Button();
             this.lbl_DB = new System.Windows.Forms.Label();
             this.lbl_database = new System.Windows.Forms.Label();
-            this.btn_combineDBs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_awards)).BeginInit();
             this.group_AddAward.SuspendLayout();
             this.SuspendLayout();
@@ -374,18 +373,6 @@
             this.lbl_database.TabIndex = 22;
             this.lbl_database.Text = "Database: ";
             // 
-            // btn_combineDBs
-            // 
-            this.btn_combineDBs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_combineDBs.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btn_combineDBs.Location = new System.Drawing.Point(1269, 34);
-            this.btn_combineDBs.Name = "btn_combineDBs";
-            this.btn_combineDBs.Size = new System.Drawing.Size(159, 33);
-            this.btn_combineDBs.TabIndex = 23;
-            this.btn_combineDBs.Text = "Combine db Files";
-            this.btn_combineDBs.UseVisualStyleBackColor = true;
-            this.btn_combineDBs.Click += new System.EventHandler(this.btn_combineDBs_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -393,7 +380,6 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1489, 894);
             this.Controls.Add(this.lbl_Message);
-            this.Controls.Add(this.btn_combineDBs);
             this.Controls.Add(this.lbl_database);
             this.Controls.Add(this.lbl_DB);
             this.Controls.Add(this.btn_outputPriorities);
@@ -448,7 +434,6 @@
         private System.Windows.Forms.Button btn_OpenSearchForm;
         private System.Windows.Forms.Label lbl_DB;
         private System.Windows.Forms.Label lbl_database;
-        private System.Windows.Forms.Button btn_combineDBs;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_location;
     }
