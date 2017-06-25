@@ -409,7 +409,7 @@ namespace WE2017Awards
                             // Add title
                             objText = slide.Shapes[1].TextFrame.TextRange;
                             objText.Text = row["Award"].ToString();
-                            objText.Font.Name = "Lucida Sans";
+                            objText.Font.Name = "Garamond";
                             objText.Font.Size = 40;
 
                                 objText = slide.Shapes[2].TextFrame.TextRange;
@@ -447,7 +447,7 @@ namespace WE2017Awards
                     // Add title
                     objText = slide.Shapes[1].TextFrame.TextRange;
                     objText.Text = "Best of Show";
-                    objText.Font.Name = "Lucida Sans";
+                    objText.Font.Name = "Garamond";
                     objText.Font.Size = 40;
 
                     objText = slide.Shapes[2].TextFrame.TextRange;
